@@ -1,6 +1,9 @@
+# Follow instructions here https://access.redhat.com/management/api to grab your token
+
 offline_token='PASTE HERE'
 
-contractid=10169621
+# add contract id here
+contractid=
 
 function jsonValue() {
 KEY=$1
