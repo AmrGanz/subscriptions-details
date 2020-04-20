@@ -19,11 +19,11 @@ do
 	echo "===================================================="
 	echo "subscription ID: $subid"
         echo "Subscription Name: $subname"
-	systems=`curl -s -H "Authorization: Bearer $token" -X GET "https://api.access.redhat.com/management/v1/subscriptions/$sub/systems" -H "accept: application/json"  | jq -r '.body[].systemName'`
+	systems=`curl -s -H "Authorization: Bearer $token" -X GET "https://api.access.redhat.com/management/v1/subscriptions/$subid/systems" -H "accept: application/json"  | jq -r '.body[].systemName'`
 	for x in $systems
 	do	
 		echo "System name: $systems"
-		systemtype=`curl -s -H "Authorization: Bearer $token" -X GET "https://api.access.redhat.com/management/v1/subscriptions/$sub/systems" -H "accept: application/json"  | jq -r '.body[].type'`
+		systemtype=`curl -s -H "Authorization: Bearer $token" -X GET "https://api.access.redhat.com/management/v1/subscriptions/$subid/systems" -H "accept: application/json"  | jq -r '.body[].type'`
 		echo "System Type: $systemtype"
 	done
 	echo "===================================================="
